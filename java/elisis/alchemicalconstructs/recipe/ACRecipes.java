@@ -1,6 +1,6 @@
 package elisis.alchemicalconstructs.recipe;
 
-public final class ACRecipes {
+public class ACRecipes {
 	
 	
 
