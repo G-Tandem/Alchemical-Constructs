@@ -6,8 +6,11 @@ import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 import elisis.alchemicalconstructs.block.ACBlocks;
 import elisis.alchemicalconstructs.item.ACItems;
+import elisis.alchemicalconstructs.recipe.ACRecipes;
+import elisis.alchemicalconstructs.world.ACWorldGen;
 
 @Mod(modid = AlchemicalConstructs.MODID, name = AlchemicalConstructs.NAME, version = AlchemicalConstructs.VERSION)
 public class AlchemicalConstructs {
@@ -22,6 +25,7 @@ public class AlchemicalConstructs {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) { 
+		
 		ACItems.init();
 		ACBlocks.init();
 		
@@ -30,6 +34,8 @@ public class AlchemicalConstructs {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		
+		ACRecipes.init();
+		GameRegistry.registerWorldGenerator(new ACWorldGen(), 0);
 	}
 	
 	@EventHandler
