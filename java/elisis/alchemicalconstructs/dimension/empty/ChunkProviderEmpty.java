@@ -24,7 +24,7 @@ public class ChunkProviderEmpty implements IChunkProvider {
 
 	public ChunkProviderEmpty(World world, long random, boolean features) {
 		
-		this.worldObj = 
+		
 	}
 	
 	@Override

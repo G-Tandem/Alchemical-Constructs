@@ -19,7 +19,7 @@ public class WorldProviderEmpty extends WorldProvider {
 	}
 	
 	public IChunkProvider createChunkGenerator() {
-		return new ChunkProviderEmpty
+		return new ChunkProviderEmpty();
 	}
 
 }
