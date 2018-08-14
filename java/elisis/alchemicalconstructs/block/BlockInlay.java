@@ -6,7 +6,7 @@ import net.minecraft.block.material.Material;
 
 public class BlockInlay extends Block {
 
-	protected BlockInlay(Material mat, String name, ) {
+	protected BlockInlay(Material mat ) {
 		super(mat);
 		GameRegistry.registerBlock(this, name)
 	}
