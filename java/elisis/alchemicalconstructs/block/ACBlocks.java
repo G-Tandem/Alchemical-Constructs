@@ -18,12 +18,12 @@ public class ACBlocks {
 	public static void init() {
 		
 		
-		copper_ore = new
+		//copper_ore = new;
 		
 		
 		GameRegistry.registerBlock(gypsum_block, gypsum_block.getUnlocalizedName());
 		
-		copper_inlay = new Block(metal)
+		copper_inlay = new CopperInlay();
 		GameRegistry.registerBlock(copper_inlay, copper_inlay.getUnlocalizedName());
 		
 	}
