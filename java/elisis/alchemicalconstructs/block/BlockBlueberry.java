@@ -30,7 +30,8 @@ public class BlockBlueberry extends RecipeBlockCrops {
 	public Item getItemDropped(int meta, Random rand, int fortune) {
 		//DEBUG
 		System.out.println("Blockberry getItemDropped()");
-		return(ACItems.blueberry);
+		//return(ACItems.blueberry);
+		return null;
 	}
 	
 	@Override

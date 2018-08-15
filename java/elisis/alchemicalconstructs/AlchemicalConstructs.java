@@ -34,8 +34,8 @@ public class AlchemicalConstructs {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		
-		ACRecipes.init();
-		GameRegistry.registerWorldGenerator(new ACWorldGen(), 0);
+		//ACRecipes.init();
+		//GameRegistry.registerWorldGenerator(new ACWorldGen(), 0);
 	}
 	
 	@EventHandler
@@ -44,5 +44,3 @@ public class AlchemicalConstructs {
 	}
 	
 }
-
-//Test

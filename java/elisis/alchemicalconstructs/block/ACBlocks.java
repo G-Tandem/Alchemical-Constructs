@@ -4,12 +4,15 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import elisis.alchemicalconstructs.item.ACItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class ACBlocks {
 	
 	public static Block copper_inlay;
 	
 	public static Block copper_ore;
+	
+	public static Block lead_block;
 	
 	/*unlocalizedName, material, drop, least_quantity, most_quantity, hardness, resistance, tool, level*/
 	public static Block gypsum_block = new CustomDropBlock("gypsum_block", Material.rock, ACItems.gypsum_dust, 
@@ -26,6 +29,9 @@ public class ACBlocks {
 		copper_inlay = new CopperInlay();
 		GameRegistry.registerBlock(copper_inlay, copper_inlay.getUnlocalizedName());
 		
+		lead_block = new BlockLead(Material.iron);
+		GameRegistry.registerBlock(lead_block, lead_block.getUnlocalizedName());
+		OreDictionary.registerOre("blockLead", lead_block);
 	}
 	
 

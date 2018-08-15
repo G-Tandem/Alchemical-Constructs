@@ -3,13 +3,28 @@ package elisis.alchemicalconstructs.multiblock;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
-public class TileDuplicateMultiblock extends TileEntity {
+public abstract class TileMultiblock extends TileEntity {
 	
 	private boolean hasMaster, isMaster;
 	private int masterX, masterY, masterZ;
 	
 	@Override
 	public void updateEntity() {
+		super.updateEntity();
+		
+		if (!worldObj.isRemote) {
+			if (hasMaster()) {
+				if (isMaster()) {
+					//Put multiblock actions here
+				}
+			
+			} else {
+				
+				//Constantly check if structure is formed until it is
+				if (checkMultiblockForm())
+					setupStructure();
+			}
+		}
 		
 	}
 	
@@ -77,48 +92,51 @@ public class TileDuplicateMultiblock extends TileEntity {
 		masterZ = z;
 	}
 	
-	public boolean checkMultiblockForm() {
+	public abstract boolean checkMultiblockForm();
+	
+	public void setupStructure() {
+
+	}
+	
+	//Resets method to be run when the master is gone or tells them to
+	public void reset() {
 		
-		int i = 0;
+		masterX = 0;
+		masterY = 0;
+		masterZ = 0;
+		isMaster = false;
+		hasMaster = false;
+	}
+	
+	public boolean checkForMaster() {
+		
+		TileEntity tile = worldObj.getTileEntity(masterX, masterY, masterZ);
+		return (tile != null && (tile instanceof TileMultiblock));
+	}
+	
+	public void resetStructure() {
 		
 		for (int x = xCoord - 1; x < xCoord + 2; x++)
 			for (int y = yCoord; y < yCoord + 3; y++)
 				for (int z = zCoord - 1; z < zCoord + 2; z++) {
-					TileEntity tile = worldObj.getTileEntity(x, y, z);
-					//Make sure tile != null, is an instance of the same Tile, and isn't already a part of a multiblock
 					
-					if (tile != null && (tile instanceof TileDuplicateMultiblock)) {
-						if (this.isMaster()) {
-							if (((TileDuplicateMultiblock)tile).hasMaster())
-								i++;
-						
-						} else if (!((TileDuplicateMultiblock)tile).hasMaster())
-							i++;
-					}
-				}
-		return i > 25 && worldObj.isAirBlock(xCoord, yCoord, zCoord);
+					TileEntity tile = worldObj.getTileEntity(x, y, z);
+					if (tile != null && (tile instanceof TileMultiblock))
+						((TileMultiblock) tile).reset();
+			}
+	}
+
+	public void masterWriteToNBT() {
 		
 	}
-	
-	public void setupStructure() {
+
+	public void masterReadFromNBT() {
 		
-		for (int x = xCoord - 1; x < xCoord + 2; x++)
-			for (int y = yCoord; y < yCoord + 3; y++)
-				for (int z = zCoord; z < zCoord + 2; z++) {
-					TileEntity tile = worldObj.getTileEntity(x, y, z);
-					
-					//Check if block is bottom centre block
-					boolean master = (x == xCoord && y == yCoord && z == zCoord);
-					
-					if (tile != null && (tile instanceof TileDuplicateMultiblock)) {
-						((TileDuplicateMultiblock) tile).setMasterCoords(xCoord, yCoord, zCoord);
-						((TileDuplicateMultiblock) tile).setHasMaster(true);
-						((TileDuplicateMultiblock) tile).setIsMaster(master);
-					}
-				}
 	}
-	
-	//Resets (3.)
+
+	public void doMultiblockStuff() {
+		
+	}
 	
 
 }
