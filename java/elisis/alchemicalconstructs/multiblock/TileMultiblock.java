@@ -3,6 +3,7 @@ package elisis.alchemicalconstructs.multiblock;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
+//Only used for other multiblocks
 public abstract class TileMultiblock extends TileEntity {
 	
 	private boolean hasMaster, isMaster;

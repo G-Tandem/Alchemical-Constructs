@@ -15,14 +15,12 @@ public class ChunkProviderEmpty implements IChunkProvider {
 	
 	
 	//The following is shoddy code not written by me, and I can't be bothered to change it.
-	
-	private Random rand;
 	private NoiseGeneratorOctaves octaves_1;
 	private NoiseGeneratorOctaves octaves_2;
 	private NoiseGeneratorOctaves octaves_3;
 	
 
-	public ChunkProviderEmpty(World world, long random, boolean features) {
+	public ChunkProviderEmpty(World world, Random rand, boolean features) {
 		
 		
 	}

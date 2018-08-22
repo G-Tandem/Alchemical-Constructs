@@ -4,6 +4,7 @@ import elisis.alchemicalconstructs.block.ACBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 
+//FIXME Broken, something wrong with writing to nbt
 public class TileLeadMultiblock extends TileMultiblock {
 	
 	@Override

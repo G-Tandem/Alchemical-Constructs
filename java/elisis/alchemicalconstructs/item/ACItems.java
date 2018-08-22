@@ -20,20 +20,21 @@ public class ACItems {
 	
 	public static void init() {
 		
-		//chalk = new ItemChalk();
-		//GameRegistry.registerItem(chalk, chalk.getUnlocalizedName());
+		chalk = new ItemChalk();
+		GameRegistry.registerItem(chalk, chalk.getUnlocalizedName());
 		
-		//gypsum_dust = new Item().setUnlocalizedName("gypsum_dust").setTextureName(AlchemicalConstructs.MODID + ":" + gypsum_dust.getUnlocalizedName()).setCreativeTab(CreativeTabs.tabMaterials);
-		//GameRegistry.registerItem(chalk, chalk.getUnlocalizedName());
+		gypsum_dust = new Item().setUnlocalizedName("gypsum_dust").setTextureName(AlchemicalConstructs.MODID + ":gypsum_dust").setCreativeTab(CreativeTabs.tabMaterials);
+		GameRegistry.registerItem(chalk, chalk.getUnlocalizedName());
+		OreDictionary.registerOre("dustGypsum", gypsum_dust);
 	
 		
-		copper_ingot = new Item().setUnlocalizedName("copper_ingot");//.setTextureName(AlchemicalConstructs.MODID + ":" + copper_ingot.getUnlocalizedName()).setCreativeTab(CreativeTabs.tabMaterials);
+		copper_ingot = new Item().setUnlocalizedName("copper_ingot").setTextureName(AlchemicalConstructs.MODID + ":copper_ingot").setCreativeTab(CreativeTabs.tabMaterials);
 		GameRegistry.registerItem(copper_ingot, copper_ingot.getUnlocalizedName());
 		OreDictionary.registerOre("oreCopper", copper_ingot);
 		
-		//lead_ingot = new Item().setUnlocalizedName("lead_ingot").setTextureName(AlchemicalConstructs.MODID + ":" + lead_ingot.getUnlocalizedName()).setCreativeTab(CreativeTabs.tabMaterials);
-		//GameRegistry.registerItem(lead_ingot, lead_ingot.getUnlocalizedName());
-		//OreDictionary.registerOre("ingotLead", lead_ingot);
+		lead_ingot = new Item().setUnlocalizedName("lead_ingot").setTextureName(AlchemicalConstructs.MODID + ":lead_ingot").setCreativeTab(CreativeTabs.tabMaterials);
+		GameRegistry.registerItem(lead_ingot, lead_ingot.getUnlocalizedName());
+		OreDictionary.registerOre("ingotLead", lead_ingot);
 	
 	}
 

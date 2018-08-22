@@ -16,7 +16,7 @@ public class CustomDropBlock extends Block {
 	private int most_quantity;
 	
 	//Creates a block with a specified drop (including ores)
-	protected CustomDropBlock(String unlocalizedName, Material mat, Item drop, int meta, int least_quantity, int most_quantity, float hardness, float resistance, String tool, int level) {
+	protected CustomDropBlock(String unlocalizedName, Material mat, Item drop, int meta, int least_quantity, int most_quantity, float hardness, float resistance, String tool, int level, SoundType sound) {
 		
 		super(mat);
 		this.drop = drop;

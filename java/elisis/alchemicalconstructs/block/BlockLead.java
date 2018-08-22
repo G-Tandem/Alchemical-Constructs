@@ -22,6 +22,7 @@ public class BlockLead extends BlockMultiblock {
 		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 
+	//Broken, needs fixing
 	@Override
 	public TileEntity createNewTileEntity(World world, int meta) {
 		return new TileLeadMultiblock();
