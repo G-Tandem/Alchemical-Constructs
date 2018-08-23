@@ -24,7 +24,7 @@ public class ACItems {
 		GameRegistry.registerItem(chalk, chalk.getUnlocalizedName());
 		
 		gypsum_dust = new Item().setUnlocalizedName("gypsum_dust").setTextureName(AlchemicalConstructs.MODID + ":gypsum_dust").setCreativeTab(CreativeTabs.tabMaterials);
-		GameRegistry.registerItem(chalk, chalk.getUnlocalizedName());
+		GameRegistry.registerItem(gypsum_dust, "gypsum_dust");
 		OreDictionary.registerOre("dustGypsum", gypsum_dust);
 	
 		
