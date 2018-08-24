@@ -16,8 +16,12 @@ public class ACItems {
 	
 	public static Item weak_reagent;
 	public static Item strenthened_reagent;
+
 	
-	
+	/**
+     * For registering items, adding stuff to the OreDictionary, the works.
+     *
+     */
 	public static void init() {
 		
 		chalk = new ItemChalk();

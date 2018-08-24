@@ -15,6 +15,25 @@ public class CustomDropBlock extends Block {
 	private int least_quantity;
 	private int most_quantity;
 	
+	
+	//*Probably* won't need this, but it's good to be organized ;)
+	/**
+	 * An instance of a block with a custom drop.
+	 * @author Elisis
+	 * 
+	 * @param unlocalizedName The name the block will be registered under
+	 * @param mat The material of the block
+	 * @param drop The item the block drops
+	 * @param meta Damage of the item dropped (don't need to worry about this, unless you're working with something like dye)
+	 * @param least_quantity The least amount of the item that the block will drop
+	 * @param most_quantity The most amount of the item that the block will drop
+	 * @param hardness The hardness of the block
+	 * @param resistance The resistance of the block
+	 * @param tool The tool of which is effective against the block
+	 * @param level The tool level required
+	 * @param sound The step sound
+	 */
+	
 	//Creates a block with a specified drop (including ores)
 	protected CustomDropBlock(String unlocalizedName, Material mat, Item drop, int meta, int least_quantity, int most_quantity, float hardness, float resistance, String tool, int level, SoundType sound) {
 		
