@@ -3,24 +3,88 @@ package elisis.alchemicalconstructs.dimension.empty;
 import java.util.List;
 import java.util.Random;
 
+import elisis.alchemicalconstructs.AlchemicalConstructs;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldType;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.MapGenBase;
+import net.minecraft.world.gen.MapGenCaves;
+import net.minecraft.world.gen.MapGenRavine;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
+import net.minecraft.world.gen.NoiseGeneratorPerlin;
+import net.minecraft.world.gen.structure.MapGenScatteredFeature;
 
 public class ChunkProviderEmpty implements IChunkProvider {
 	
-	
 	//The following is shoddy code not written by me, and I can't be bothered to change it.
-	private NoiseGeneratorOctaves octaves_1;
-	private NoiseGeneratorOctaves octaves_2;
-	private NoiseGeneratorOctaves octaves_3;
+	
+	//A NoiseGeneratorOctaves used in generating terrain (probably won't be used, for obvious reasons)
+	private NoiseGeneratorOctaves noiseGen1;
+	private NoiseGeneratorOctaves noiseGen2;
+	private NoiseGeneratorOctaves noiseGen3;
+	private NoiseGeneratorPerlin noisePerl;
+	
+	public NoiseGeneratorOctaves noiseGen5;
+	
+	public NoiseGeneratorOctaves noiseGen6;
+	public NoiseGeneratorOctaves mobSpawnerNoise;
+	
+	//Reference to World object
+	private World worldObj;
+	
+	//Whether map features are to be generated, e.g strongholds (no)
+	private final boolean mapFeaturesEnabled;
+	
+	
+	private WorldType worldType;
+	private final double[] noiseArray;
+	private final float[] parabolicField;
+	private double[] stoneNoise = new double[256]; //??
+	private MapGenBase caveGenerator = new MapGenCaves(); //Probably won't be used.
+	
+	private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature(); //Probably won't be used.
+	
+	//Holds ravine generator. Again, probably won't be used.
+	private MapGenBase ravineGenerator = new MapGenRavine();
+	
+	//The biomes used to generate the chunk
+	private BiomeGenBase[] biomesForGeneration;
+	
+	//Double array(s?) to hold terrain noise
+	double[] noise1;
+	double[] noise2;
+	double[] noise3;
+	double[] noise5;
+	int[][] field_73219_j = new int[32][32]; //???
 	
 
-	public ChunkProviderEmpty(World world, Random rand, boolean features) {
+	private Random rand;
+	
+	public ChunkProviderEmpty(World world, long seed, boolean features) {
+		
+		AlchemicalConstructs.logger.info("<--ALCHEMICAL CONSTRUCTS-->:Loading chunk provider for empty dimension.");
+		
+		this.worldObj = world;
+		this.mapFeaturesEnabled = features;
+		this.worldType = world.getWorldInfo().getTerrainType();
+		this.rand = new Random(seed);
+		this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
+		this.noiseGen2 = new NoiseGeneratorOctaves(this.rand, 16);
+		this.noiseGen3 = new NoiseGeneratorOctaves(this.rand, 8);
+		this.noisePerl = new NoiseGeneratorPerlin(this.rand, 4);
+		this.noiseGen5 = new NoiseGeneratorOctaves(this.rand, 10);
+		this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
+		this.mobSpawnerNoise = new NoiseGeneratorOctaves(this.rand, 8);
+		
+		this.noiseArray = new double[825];
+		this.parabolicField = new float[25];
+		
+		for 
 		
 		
 	}
@@ -105,3 +169,4 @@ public class ChunkProviderEmpty implements IChunkProvider {
 	}
 
 }
+//https://github.com/Jimmy04Creeper/Minecraft_Tutorial_1.7.10/blob/master/src/jimmy/tutorial/world/ChunkProviderForest.java

@@ -16,7 +16,7 @@ public class ItemChalk extends Item {
 			this.setUnlocalizedName("chalk");
 			this.setTextureName(AlchemicalConstructs.MODID + ":chalk");
 			this.setCreativeTab(CreativeTabs.tabTools);
-			this.setMaxDamage(255);
+			this.setMaxDamage(256);
 			
 		} else if (type == "gold") {
 			
@@ -24,7 +24,9 @@ public class ItemChalk extends Item {
 			this.setTextureName(AlchemicalConstructs.MODID + ":golden_chalk");
 			this.setCreativeTab(CreativeTabs.tabTools);
 			this.setMaxDamage(512);
+		
 		}
+		
 			
 	}
 }

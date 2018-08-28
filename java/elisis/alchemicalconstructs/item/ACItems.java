@@ -24,7 +24,7 @@ public class ACItems {
      */
 	public static void init() {
 		
-		chalk = new ItemChalk();
+		chalk = new ItemChalk("gypsum");
 		GameRegistry.registerItem(chalk, chalk.getUnlocalizedName());
 		
 		gypsum_dust = new Item().setUnlocalizedName("gypsum_dust").setTextureName(AlchemicalConstructs.MODID + ":gypsum_dust").setCreativeTab(CreativeTabs.tabMaterials);

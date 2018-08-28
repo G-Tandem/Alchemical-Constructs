@@ -1,6 +1,7 @@
 package elisis.alchemicalconstructs.block;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import elisis.alchemicalconstructs.AlchemicalConstructs;
 import elisis.alchemicalconstructs.item.ACItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -19,6 +20,8 @@ public class ACBlocks {
 			2, 4, 0, 0.5f, 2.5f, "pickaxe", 1, Block.soundTypeStone);
 	
 	public static void init() {
+		
+		
 		
 		
 		//copper_ore = new;

@@ -1,5 +1,8 @@
 package elisis.alchemicalconstructs;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -18,6 +21,8 @@ public class AlchemicalConstructs {
 	public static final String MODID = "alchemicalconstructs";
 	public static final String NAME = "Alchemical Constructs";
 	public static final String VERSION = "1.7.10a0.1";
+	
+	public static final Logger logger = LogManager.getLogger(MODID);
 	
 	//Not needed *right* now, but will be useful to have in the future. 
 	@Instance
