@@ -10,6 +10,7 @@ public class ACItems {
 	
 	public static Item chalk;
 	public static Item gypsum_dust;
+	public static Item wood_ash;
 	
 	public static Item copper_ingot;
 	public static Item lead_ingot;
@@ -24,11 +25,15 @@ public class ACItems {
      */
 	public static void init() {
 		
+		wood_ash = new Item().setUnlocalizedName("wood_ash").setTextureName(AlchemicalConstructs.MODID + ":wood_ash").setCreativeTab(CreativeTabs.tabMaterials);
+		GameRegistry.registerItem(wood_ash, wood_ash.getUnlocalizedName());
+		OreDictionary.registerOre("ashWood", wood_ash);
+		
 		chalk = new ItemChalk("gypsum");
 		GameRegistry.registerItem(chalk, chalk.getUnlocalizedName());
 		
 		gypsum_dust = new Item().setUnlocalizedName("gypsum_dust").setTextureName(AlchemicalConstructs.MODID + ":gypsum_dust").setCreativeTab(CreativeTabs.tabMaterials);
-		GameRegistry.registerItem(gypsum_dust, "gypsum_dust");
+		GameRegistry.registerItem(gypsum_dust, gypsum_dust.getUnlocalizedName());
 		OreDictionary.registerOre("dustGypsum", gypsum_dust);
 	
 		
