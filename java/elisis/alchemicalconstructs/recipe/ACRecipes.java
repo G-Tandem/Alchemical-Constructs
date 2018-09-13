@@ -12,6 +12,7 @@ public class ACRecipes {
 		GameRegistry.addSmelting(ACItems.gypsum_dust, new ItemStack(ACItems.chalk), 0);
 		
 		GameRegistry.addRecipe(new ItemStack(ACBlocks.copper_inlay), new Object[] {"###", "###", "   ", '#', ACItems.copper_ingot});
+	
 	}
 	
 	

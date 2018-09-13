@@ -14,6 +14,8 @@ import elisis.alchemicalconstructs.block.ACBlocks;
 import elisis.alchemicalconstructs.item.ACItems;
 import elisis.alchemicalconstructs.recipe.ACRecipes;
 import elisis.alchemicalconstructs.world.ACWorldGen;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 
 @Mod(modid = AlchemicalConstructs.MODID, name = AlchemicalConstructs.NAME, version = AlchemicalConstructs.VERSION)
 public class AlchemicalConstructs {
@@ -23,6 +25,14 @@ public class AlchemicalConstructs {
 	public static final String VERSION = "1.7.10a0.1";
 	
 	public static final Logger logger = LogManager.getLogger(MODID);
+	
+	
+	//Mod's Tab. Unused
+	public static final CreativeTabs tabAlchemical = new CreativeTabs("Alchemical Constructs") {
+		
+		@Override 
+		public Item getTabIconItem() {return ACItems.chalk;}
+	};
 	
 	//Not needed *right* now, but will be useful to have in the future. 
 	@Instance
@@ -48,5 +58,5 @@ public class AlchemicalConstructs {
 	public void postInit(FMLPostInitializationEvent event) {
 		
 	}
-	
+
 }

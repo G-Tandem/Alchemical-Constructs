@@ -12,10 +12,12 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 public class ACWorldGen implements IWorldGenerator {
 	
 	private WorldGenerator gen_gypsum;
+	private WorldGenerator gen_copper_ore;
 	
 	public ACWorldGen() {
+		
 		this.gen_gypsum = new WorldGenMinable(ACBlocks.gypsum_block, 20);
-			
+		this.gen_copper_ore = new WorldGenMinable(ACBlocks.copper_ore, 8);	
 	}
 	
 	public void generate(Random rand, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
@@ -25,6 +27,8 @@ public class ACWorldGen implements IWorldGenerator {
 		case 0: //Overworld
 			
 			this.runGenerator(this.gen_gypsum, world, rand, chunkX, chunkZ, 20, 25, 90);
+			this.runGenerator(gen_copper_ore, world, rand, chunkX, chunkZ, 12, 8, 80);
+			
 			break;
 			
 		case -1: //Nether

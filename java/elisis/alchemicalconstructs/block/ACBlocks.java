@@ -16,6 +16,10 @@ public class ACBlocks {
 	
 	public static Block gypsum_block;
 	
+	public static Block tin_ore;
+	
+	public static Block silver_ore;
+	
 	public static void init() {		
 		
 		gypsum_block = new CustomDropBlock("gypsum_block", Material.rock, ACItems.gypsum_dust, 
@@ -34,6 +38,10 @@ public class ACBlocks {
 		copper_ore = new BasicBlock("copper_ore", Material.rock, 0.5f, 2.5f, "pickaxe", 2, Block.soundTypeStone);
 		GameRegistry.registerBlock(copper_ore, copper_ore.getUnlocalizedName());
 		OreDictionary.registerOre("oreCopper", copper_ore);
+		
+		tin_ore = new BasicBlock("tin_ore", Material.rock, 0.5f, 2.5f, "pickaxe", 2, Block.soundTypeStone);
+		GameRegistry.registerBlock(tin_ore, tin_ore.getUnlocalizedName());
+		OreDictionary.registerOre("oreTin", tin_ore);
 		
 		
 		

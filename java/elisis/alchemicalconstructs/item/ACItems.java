@@ -9,6 +9,7 @@ import net.minecraftforge.oredict.OreDictionary;
 public class ACItems {
 	
 	public static Item chalk;
+	public static Item golden_chalk;
 	public static Item gypsum_dust;
 	public static Item wood_ash;
 	
@@ -17,6 +18,8 @@ public class ACItems {
 	
 	public static Item weak_reagent;
 	public static Item strenthened_reagent;
+	
+	
 
 	
 	/**
@@ -31,6 +34,11 @@ public class ACItems {
 		
 		chalk = new ItemChalk("gypsum");
 		GameRegistry.registerItem(chalk, chalk.getUnlocalizedName());
+		OreDictionary.registerOre("chalkGypsum", chalk);
+		
+		golden_chalk = new ItemChalk("gold");
+		GameRegistry.registerItem(golden_chalk, golden_chalk.getUnlocalizedName());
+		OreDictionary.registerOre("chalkGold", golden_chalk);
 		
 		gypsum_dust = new Item().setUnlocalizedName("gypsum_dust").setTextureName(AlchemicalConstructs.MODID + ":gypsum_dust").setCreativeTab(CreativeTabs.tabMaterials);
 		GameRegistry.registerItem(gypsum_dust, gypsum_dust.getUnlocalizedName());
